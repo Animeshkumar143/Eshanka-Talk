@@ -1,0 +1,344 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+<title>Eshanka Talk — Talk to Astrologer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="/astrotalk-clone/styles.css">
+
+<style>
+
+.chat-page{padding:40px 0;background:#f4f4f4;}
+.chat-title{font-size:24px;font-weight:600;margin-bottom:20px;}
+
+.top-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:25px;}
+
+.search-box{display:flex;border:1px solid #ddd;background:#fff;border-radius:6px;overflow:hidden;}
+
+.search-box input{border:none;padding:10px;width:200px;outline:none;}
+
+.search-btn{background:#ffd400;border:none;padding:10px 12px;cursor:pointer;}
+
+.filter-btn{border:1px solid #ddd;background:#fff;padding:6px 12px;border-radius:20px;font-size:13px;cursor:pointer;}
+
+.filter-btn.active{background:#ffd400;}
+
+.astro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+
+.astro-card{
+background:#fff;
+border-radius:10px;
+padding:15px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.astro-left{display:flex;gap:12px;align-items:center;}
+
+.astro-img{
+width:70px;
+height:70px;
+border-radius:50%;
+border:3px solid #ffd400;
+object-fit:cover;
+}
+
+.astro-info h4{margin:0;font-size:15px;}
+
+.astro-info p{margin:2px 0;font-size:12px;color:#666;}
+
+.rating{color:#f5b301;font-size:12px;}
+
+.orders{font-size:11px;color:#888;}
+
+.price{font-weight:600;font-size:13px;}
+
+.call-btn{
+border:1px solid #2ecc71;
+background:#fff;
+color:#2ecc71;
+padding:6px 16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.call-btn:hover{background:#2ecc71;color:#fff;}
+
+.verify{color:#2ecc71;font-size:13px;margin-left:4px;}
+
+/* LOGIN MODAL */
+
+#login-modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+align-items:center;
+justify-content:center;
+z-index:999;
+}
+
+.login-box{
+background:#fff;
+width:400px;
+border-radius:10px;
+padding:25px;
+text-align:center;
+}
+
+.phone-input input{
+width:100%;
+padding:10px;
+border:1px solid #ddd;
+border-radius:6px;
+margin:10px 0;
+}
+
+.otp-btn{
+background:#ffd400;
+border:none;
+padding:12px;
+width:100%;
+border-radius:6px;
+cursor:pointer;
+font-weight:600;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="site-header">
+<div class="container header-inner">
+
+<a class="logo" href="/astrotalk-clone/index.html">
+<img src="/astrotalk-clone/assets/logo.png">
+<span>Eshanka Talk</span>
+</a>
+
+<nav class="nav">
+
+<a href="/astrotalk-clone/Kundli.html">
+<i class="fa-solid fa-star"></i>Free Kundli
+</a>
+
+<a href="/astrotalk-clone/Matching.html">
+<i class="fa-solid fa-heart"></i>Kundli Matching
+</a>
+
+<a href="/astrotalk-clone/Horoscope/Horoscope.html">
+<i class="fa-solid fa-moon"></i>Horoscopes
+</a>
+
+<a href="/astrotalk-clone/Calculator.html">
+<i class="fa-solid fa-calculator"></i>Calculators
+</a>
+
+</nav>
+
+<div class="header-actions">
+<button class="btn ghost"><i class="fa-solid fa-user"></i> Login</button>
+<button class="btn cta"><i class="fa-solid fa-phone"></i> Call Now</button>
+</div>
+
+</div>
+</header>
+
+<main>
+
+<section class="chat-page">
+
+<div class="container">
+
+<h2 class="chat-title">Talk to Astrologer</h2>
+
+<div class="top-bar">
+
+<div class="search-box">
+<input type="text" placeholder="Search name...">
+<button class="search-btn"><i class="fa-solid fa-search"></i></button>
+</div>
+
+<button class="filter-btn active">All</button> <button class="filter-btn">Love</button> <button class="filter-btn">Education</button> <button class="filter-btn">Career</button> <button class="filter-btn">Marriage</button> <button class="filter-btn">Health</button> <button class="filter-btn">Wealth</button>
+
+</div>
+
+<div class="astro-grid" id="astroGrid"></div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer class="site-footer">
+
+<div class="container footer-grid">
+
+<div class="footer-col">
+<h4>ABOUT</h4>
+<ul>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Careers</a></li>
+<li><a href="#">Astrology Stories</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h4>HELP</h4>
+<ul>
+<li><a href="#">Payments</a></li>
+<li><a href="#">Refund Policy</a></li>
+<li><a href="#">FAQ</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h4>CONTACT</h4>
+<p><i class="fa-solid fa-envelope"></i> contact@eshankatalk.com</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 <strong>EshankaTalk.com</strong> · All Rights Reserved
+</div>
+
+</footer>
+
+<div id="login-modal">
+<div class="login-box">
+
+<h3>Continue with Phone</h3>
+
+<p>You will receive a 4 digit code for verification</p>
+
+<div class="phone-input">
+<input type="tel" placeholder="Enter mobile no.">
+</div>
+
+<button class="otp-btn">GET OTP</button>
+
+<button id="close-login" style="margin-top:10px;">Close</button>
+
+</div>
+</div>
+
+<script>
+
+let selectedPrice=0;
+let selectedName="";
+let selectedImg="";
+
+const names=[
+"Vishwajit","Arhanshi","Trishka","Gopalkrishna","Rai",
+"Utkesh","Neemaya","Astro Prabhash","Yuvansh","Aradya",
+"Somij","Jeetesh","Sanjay","Vipraj","Shivarchak",
+"Chaitanya","Joban","Arbaaz","Nishya","Gajanan",
+"Samkisha","Tarun","Kiran","Rohit","Shalini",
+"Deepika","Kunal","Manish","Divya","Ankit"
+];
+
+const skills=[
+"Vedic Astrology","Tarot Reader","Numerology","Palmistry",
+"Vastu","Face Reading","Lal Kitab","Life Coach"
+];
+
+const grid=document.getElementById("astroGrid");
+
+for(let i=0;i<30;i++){
+
+let gender=Math.random()>0.5?"men":"women";
+let img=`https://randomuser.me/api/portraits/${gender}/${Math.floor(Math.random()*80)}.jpg`;
+let exp=Math.floor(Math.random()*15)+1;
+let price=Math.floor(Math.random()*60)+20;
+let orders=Math.floor(Math.random()*90000)+1000;
+let skill=skills[Math.floor(Math.random()*skills.length)];
+
+grid.innerHTML+=`
+
+<div class="astro-card">
+
+<div class="astro-left">
+
+<img src="${img}" class="astro-img">
+
+<div class="astro-info">
+
+<h4>${names[i]} <i class="fa-solid fa-circle-check verify"></i></h4>
+
+<p>${skill}</p>
+
+<p>Hindi</p>
+
+<div class="rating">★★★★★</div>
+
+<p class="orders">${orders} orders</p>
+
+<p class="price">₹ ${price}/min</p>
+
+</div>
+
+</div>
+
+<button 
+class="call-btn open-login"
+data-price="${price}"
+data-name="${names[i]}"
+data-img="${img}"
+>
+Call
+</button>
+
+</div>
+
+`;
+
+}
+
+
+document.addEventListener("click",function(e){
+
+if(e.target.classList.contains("open-login")){
+
+selectedPrice=e.target.dataset.price;
+selectedName=e.target.dataset.name;
+selectedImg=e.target.dataset.img;
+
+document.getElementById("login-modal").style.display="flex";
+
+}
+
+});
+
+
+document.getElementById("close-login").onclick=function(){
+document.getElementById("login-modal").style.display="none";
+};
+
+
+document.querySelector(".otp-btn").addEventListener("click",function(){
+
+window.location.href="/astrotalk-clone/payment/payment.html?amount="+selectedPrice+"&name="+selectedName+"&img="+selectedImg;
+
+});
+
+</script>
+
+</body>
+</html>

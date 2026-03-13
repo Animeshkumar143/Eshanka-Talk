@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Name Numerology Calculator | Eshanka Talk</title>
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="../index.html">
+      <img src="../assets/logo.png">
+      <span>Eshanka Talk</span>
+    </a>
+
+    <nav class="nav">
+      <a href="../Kundli.html"><i class="fa-solid fa-star"></i>Free Kundli</a>
+      <a href="../Matching.html"><i class="fa-solid fa-heart"></i>Matching</a>
+      <a href="../Calculator.html"><i class="fa-solid fa-calculator"></i><strong>Calculators</strong></a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="btn ghost"><i class="fa-solid fa-user"></i> Login</button>
+      <button class="btn cta"><i class="fa-solid fa-comments"></i> Talk Now</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="kundli-hero">
+<div class="container">
+<h1>Sun Sign Calculator</h1>
+<p>Find your Zodiac Sign by Date of Birth</p>
+</div>
+</section>
+
+
+<!-- FORM -->
+<section class="sun-section">
+<div class="container">
+
+<div class="sun-card">
+
+<h2>🔮 Find Your Sun Sign 🔮</h2>
+<p class="sun-sub">Enter your birth details</p>
+
+<form id="sunForm">
+
+<!-- Name -->
+<div class="sun-group">
+<label>Name *</label>
+<input type="text" id="sunName">
+</div>
+
+<!-- Gender -->
+<div class="sun-group">
+<label>Gender *</label>
+<select id="sunGender">
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select>
+</div>
+
+<!-- DOB -->
+<div class="sun-group">
+<label>Date of Birth *</label>
+
+<div class="sun-row">
+
+<select id="sunDay">
+<option value="">Day</option>
+</select>
+
+<select id="sunMonth">
+<option value="">Month</option>
+<option>January</option>
+<option>February</option>
+<option>March</option>
+<option>April</option>
+<option>May</option>
+<option>June</option>
+<option>July</option>
+<option>August</option>
+<option>September</option>
+<option>October</option>
+<option>November</option>
+<option>December</option>
+</select>
+
+<select id="sunYear">
+<option value="">Year</option>
+</select>
+
+</div>
+</div>
+
+<!-- City -->
+<div class="sun-group">
+<label>Place of Birth *</label>
+
+<select id="sunPlace">
+<option value="">Select City</option>
+</select>
+</div>
+
+
+<button class="sun-submit">
+✨ Find Your Sun Sign ✨
+</button>
+
+</form>
+
+</div>
+</div>
+</section>
+
+
+
+<!-- ================= SUN RESULT POPUP ================= -->
+<div class="sun-popup" id="sunPopup">
+
+  <div class="sun-popup-box">
+
+    <span class="sun-close" id="sunClose">&times;</span>
+
+    <!-- Header -->
+    <div class="sun-popup-header">
+
+      <div>
+        <h2 id="sunTitle"></h2>
+        <p>YOUR SUN SIGN</p>
+        <h3 id="sunSignPop"></h3>
+      </div>
+
+      <img id="sunImg" class="sun-img">
+
+    </div>
+
+
+    <!-- Body -->
+    <div class="sun-popup-body">
+
+      <h3>Astrology Details</h3>
+
+      <div class="sun-grid">
+
+        <div><span>Element</span><b id="sunElementPop"></b></div>
+        <div><span>Planet</span><b id="sunPlanetPop"></b></div>
+        <div><span>Vedic Sign</span><b id="vedicSignPop"></b></div>
+        <div><span>Birth Place</span><b id="sunPlacePop"></b></div>
+
+      </div>
+
+
+      <!-- Profile -->
+      <div class="sun-profile" id="sunProfilePop"></div>
+
+
+      <!-- Actions -->
+      <div class="sun-actions">
+
+        <button id="sunSharePop">📤 Share</button>
+        <button id="sunAgainPop">Calculate Again</button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+</section>
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <h4>ABOUT</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Astrology Stories</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>HELP</h4>
+      <ul>
+        <li><a href="#">Payments</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>CONTACT</h4>
+      <p><i class="fa-solid fa-envelope"></i> contact@eshankatalk.com</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 <strong>EshankaTalk.com</strong> · All Rights Reserved
+  </div>
+</footer>
+
+<script src="../scripts/common.js"></script>
+<script src="../scripts/numerology.js"></script>
+<script src="../scripts/chatbot.js"></script>
+<script src="../scripts/sun-sign.js"></script>
+</body>
+</html>

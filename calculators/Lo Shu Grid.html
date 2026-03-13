@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Lo Shu Grid Calculator | Eshanka Talk</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+
+</head>
+<body>
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a class="logo" href="../index.html">
+      <img src="../assets/logo.png">
+      <span>Eshanka Talk</span>
+    </a>
+
+    <nav class="nav">
+      <a href="../Kundli.html"><i class="fa-solid fa-star"></i>Free Kundli</a>
+      <a href="../Matching.html"><i class="fa-solid fa-heart"></i>Matching</a>
+      <a href="../Calculator.html"><i class="fa-solid fa-calculator"></i><strong>Calculators</strong></a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="btn ghost"><i class="fa-solid fa-user"></i> Login</button>
+      <button class="btn cta"><i class="fa-solid fa-comments"></i> Talk Now</button>
+    </div>
+
+  </div>
+</header>
+<!-- ================= LO SHU GRID CALCULATOR ================= -->
+<div class="loshu-container">
+
+<h1>Lo Shu Grid Calculator</h1>
+<p class="loshu-desc">Map to Success and Harmony</p>
+
+
+<!-- FORM -->
+<div class="loshu-box" id="loshuForm">
+
+<h3>● Calculate your Lo Shu Grid 🌙</h3>
+
+<div class="loshu-form">
+
+<label>Date of Birth *</label>
+
+<div class="loshu-date">
+
+<select id="day">
+<option value="">Day</option>
+<script>
+for(let i=1;i<=31;i++)document.write(`<option>${i}</option>`);
+</script>
+</select>
+
+<select id="month">
+<option value="">Month</option>
+<script>
+for(let i=1;i<=12;i++)document.write(`<option>${i}</option>`);
+</script>
+</select>
+
+<select id="year">
+<option value="">Year</option>
+<script>
+for(let i=1950;i<=2026;i++)document.write(`<option>${i}</option>`);
+</script>
+</select>
+
+</div>
+
+<button id="calcBtn">✨ Calculate My Grid ✨</button>
+
+</div>
+</div>
+
+
+<!-- RESULT -->
+<div class="loshu-result" id="loshuResult">
+
+<h2>Your Lo Shu Grid</h2>
+
+
+<!-- GRID -->
+<div class="loshu-grid" id="gridBox"></div>
+
+
+<!-- PRESENT -->
+<h3>◆ Numbers Present</h3>
+<div class="loshu-list" id="presentBox"></div>
+
+
+<!-- MISSING -->
+<h3>◆ Numbers Missing</h3>
+<div class="loshu-list" id="missingBox"></div>
+
+
+<div class="loshu-actions">
+<button id="shareBtn">📤 Share</button>
+<button id="againBtn">Calculate Again</button>
+</div>
+
+</div>
+
+</div>
+
+
+<script src="../scripts/loshu.js"></script>
+
+</body>
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+
+  <div class="container footer-grid">
+
+    <div class="footer-col">
+      <h4>ABOUT</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Astrology Stories</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>HELP</h4>
+      <ul>
+        <li><a href="#">Payments</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>CONTACT</h4>
+      <p><i class="fa-solid fa-envelope"></i> contact@eshankatalk.com</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 <strong>EshankaTalk.com</strong>
+  </div>
+
+</footer>
+
+</html>

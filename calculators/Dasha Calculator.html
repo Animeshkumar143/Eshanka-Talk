@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Dasha Calculator | Eshanka Talk</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a class="logo" href="../index.html">
+      <img src="../assets/logo.png">
+      <span>Eshanka Talk</span>
+    </a>
+
+    <nav class="nav">
+      <a href="../Kundli.html">Free Kundli</a>
+      <a href="../Matching.html">Matching</a>
+      <a href="../Calculator.html"><strong>Calculators</strong></a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="btn ghost">Login</button>
+      <button class="btn cta">Talk Now</button>
+    </div>
+
+  </div>
+</header>
+
+
+<!-- ================= DASHa ================= -->
+
+<section class="dasha-container">
+
+<h1>Dasha Calculator</h1>
+
+<p class="dasha-desc">
+Calculate your Planetary Dasha Periods ✨
+</p>
+
+
+<!-- FORM -->
+
+<div class="dasha-box" id="dashaForm">
+
+<h3>● Calculate Your Dasha 🌙</h3>
+
+<div class="dasha-form">
+
+<label>Full Name *</label>
+<input type="text" id="userName">
+
+<label>Date of Birth *</label>
+
+<div class="dasha-date">
+
+<select id="day">
+<option value="">Day</option>
+<script>
+for(let i=1;i<=31;i++)document.write(`<option>${i}</option>`);
+</script>
+</select>
+
+<select id="month">
+<option value="">Month</option>
+<script>
+for(let i=1;i<=12;i++)document.write(`<option>${i}</option>`);
+</script>
+</select>
+
+<select id="year">
+<option value="">Year</option>
+<script>
+for(let i=1950;i<=2026;i++)document.write(`<option>${i}</option>`);
+</script>
+</select>
+
+</div>
+
+<button id="dashaBtn">
+✨ Calculate My Dasha ✨
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- ================= RESULT ================= -->
+
+<div class="dasha-result" id="dashaResult">
+
+<h2 id="resultTitle"></h2>
+
+<p class="result-sub">
+Planetary Dasha Periods
+</p>
+
+
+<!-- CARDS -->
+
+<div class="dasha-grid" id="dashaGrid"></div>
+
+
+<!-- SUMMARY -->
+
+<div class="dasha-summary">
+
+<div>
+<h3>9</h3>
+<p>Total Periods</p>
+</div>
+
+<div>
+<h3>120+</h3>
+<p>Years Covered</p>
+</div>
+
+<div>
+<h3>1</h3>
+<p>Birth Dasha</p>
+</div>
+
+</div>
+
+
+<!-- ACTION -->
+
+<div class="dasha-actions">
+
+<button id="dashaShare">📤 Share</button>
+
+<button id="dashaAgain">Calculate Again</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="site-footer">
+
+<div class="container footer-grid">
+
+<div class="footer-col">
+<h4>ABOUT</h4>
+<ul>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Careers</a></li>
+<li><a href="#">Stories</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h4>HELP</h4>
+<ul>
+<li><a href="#">Payments</a></li>
+<li><a href="#">Refund</a></li>
+<li><a href="#">FAQ</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h4>CONTACT</h4>
+<p>contact@eshankatalk.com</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 EshankaTalk
+</div>
+
+</footer>
+
+
+<script src="../scripts/dasha.js"></script>
+
+</body>
+</html>

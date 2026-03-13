@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Love Calculator | Eshanka Talk</title>
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER (SAME AS CALCULATOR PAGE) ================= -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="../index.html">
+      <img src="../assets/logo.png">
+      <span>Eshanka Talk</span>
+    </a>
+
+    <nav class="nav">
+      <a href="../Kundli.html"><i class="fa-solid fa-star"></i>Free Kundli</a>
+      <a href="../Matching.html"><i class="fa-solid fa-heart"></i>Matching</a>
+      <a href="../Calculator.html"><i class="fa-solid fa-calculator"></i><strong>Calculators</strong></a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="btn ghost"><i class="fa-solid fa-user"></i> Login</button>
+      <button class="btn cta"><i class="fa-solid fa-comments"></i> Talk Now</button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="kundli-hero">
+  <div class="container">
+    <h1>Love Calculator: Find Your Perfect Match</h1>
+    <p>
+      A love calculator is a fun and simple tool that tells you how strong
+      your love bond is. Enter your details and explore your romantic compatibility.
+    </p>
+  </div>
+</section>
+
+<!-- ================= LOVE CALCULATOR ================= -->
+<section class="kundli-section">
+  <div class="container">
+
+    <h3 style="text-align:center;margin-bottom:30px">
+      Find Love (Percentage)% Between
+    </h3>
+
+    <div class="kundli-grid">
+
+      <!-- LEFT + RIGHT FORM -->
+      <div class="kundli-box love-form-box">
+
+        <div class="love-form-grid">
+
+          <!-- YOUR SIDE -->
+          <div class="love-col">
+            <label>Your Name</label>
+            <input type="text" placeholder="Enter Your Name">
+
+            <div class="birth-grid">
+              <button type="button" class="gender-btn active" data-gender="male">Male</button>
+              <button type="button" class="gender-btn" data-gender="female">Female</button>
+            </div>
+          </div>
+
+          <!-- HEART -->
+          <div class="love-heart">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+
+          <!-- PARTNER SIDE -->
+          <div class="love-col">
+            <label>Partner's Name</label>
+            <input type="text" placeholder="Enter Partner's Name">
+
+            <div class="birth-grid">
+              <button type="button" class="gender-btn" data-gender="male">Male</button>
+              <button type="button" class="gender-btn active" data-gender="female">Female</button>
+            </div>
+          </div>
+
+        </div>
+
+        <button class="kundli-btn">Calculate Love %</button>
+      </div>
+
+      <!-- QUOTE BOX -->
+      <div class="kundli-box saved">
+        <h3>LOVE QUOTE OF THE DAY</h3>
+        <p>
+          Your love will be a force to be reckoned with,
+          defying all odds and conquering the world.
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOVE POPUP ================= -->
+<div class="love-popup" id="lovePopup">
+
+  <div class="love-popup-box">
+
+    <span class="love-close" id="loveClose">&times;</span>
+
+    <h2 class="result-title">Your Love Percentage</h2>
+
+    <div class="result-card">
+
+      <!-- LEFT -->
+      <div class="result-left">
+        <div class="result-circle-outer">
+          <div class="result-circle-inner">
+            <span id="lovePercentPop">0%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="result-right">
+
+        <span class="result-sub">Percentage of love between</span>
+
+        <h3 id="loveNamesPop"></h3>
+
+        <p class="result-text" id="loveTextPop"></p>
+
+        <div class="result-actions">
+
+          <button class="result-btn primary" id="loveShare">
+            <i class="fa-brands fa-whatsapp"></i> Share
+          </button>
+
+          <button class="result-btn primary" id="loveAgain">
+            ↻ Calculate Again
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<!-- ================= FOOTER (SAME AS CALCULATOR PAGE) ================= -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <h4>ABOUT</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Astrology Stories</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>HELP</h4>
+      <ul>
+        <li><a href="#">Payments</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>CONTACT</h4>
+      <p><i class="fa-solid fa-envelope"></i> contact@eshankatalk.com</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 <strong>EshankaTalk.com</strong> · All Rights Reserved
+  </div>
+</footer>
+
+<script src="../scripts/love-calculator.js"></script>
+</body>
+</html>

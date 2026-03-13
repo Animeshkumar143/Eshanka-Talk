@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eshanka Talk — Astrology Consultations</title>
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- SWIPER -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="#">
+      <img src="assets/logo.png" alt="Eshanka Talk">
+      <span>Eshanka Talk</span>
+    </a>
+
+<nav class="nav">
+
+  <a href="Kundli.html"><i class="fa-solid fa-star"></i> Kundli</a>
+  <a href="Matching.html"><i class="fa-solid fa-heart"></i> Matching</a>
+
+  <!-- ===== HOROSCOPE DROPDOWN ===== -->
+  <div class="nav-dropdown">
+    <button class="nav-link dropdown-toggle">
+      <i class="fa-solid fa-moon"></i> Horoscope
+      <i class="fa-solid fa-chevron-down arrow"></i>
+    </button>
+
+    <div class="dropdown-menu">
+      <a href="Horoscope/Horoscope.html">Today's Horoscope</a>
+      <a href="Horoscope/Tomorrow.html">Tomorrow's Horoscope</a>
+      <a href="Horoscope/Weekly.html">Weekly Horoscope</a>
+      <a href="Horoscope/Monthly.html">Monthly Horoscope</a>
+      <a href="Horoscope/Yearly.html">Yearly Horoscope</a>
+      <a href="Horoscope/Chinese.html">Chinese Horoscope</a>
+    </div>
+  </div>
+
+  <a href="Calculator.html"><i class="fa-solid fa-calculator"></i> Calculator</a>
+</nav>
+
+
+    <div class="header-actions">
+      <button class="btn ghost" id="open-login">
+        <i class="fa-solid fa-user"></i> Login
+      </button>
+      <button class="btn cta" id="open-talk">
+        <i class="fa-solid fa-comments"></i> Talk Now
+      </button>
+    </div>
+  </div> 
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero-outer fade">
+  <div class="container banner-box">
+    <div class="banner-left">
+      <img src="https://aws.astrotalk.com/images/57100ece-4afe-4c52-aeea-47f1f43fe424.png">
+    </div>
+    <div class="banner-right">
+      <span class="eyebrow"><i class="fa-solid fa-circle-check"></i> 200+ Celebs Recommend</span>
+      <h1>Chat With Expert Astrologers</h1>
+      <p>Live astrology consultation via chat & call.</p>
+      <button class="black-pill"><i class="fa-solid fa-message"></i> Start Chat</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= QUICK ACTIONS ================= -->
+<section class="quick-actions container fade">
+  <div class="actions-grid">
+
+    <a href="/astrotalk-clone/astrotalk/chat-with-astrologer.html" class="action-card pink">
+      <i class="fa-solid fa-comment-dots"></i>
+      <span>Chat</span>
+    </a>
+
+    <a href="/astrotalk-clone/astrotalk/call.html" class="action-card gold">
+      <i class="fa-solid fa-phone"></i>
+      <span>Call</span>
+    </a>
+
+    <a href="/astrotalk-clone/astrotalk/astromall.html" class="action-card pink">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span>AstroMall</span>
+    </a>
+
+    <a href="/astrotalk-clone/astrotalk/pooja.html" class="action-card gold">
+      <i class="fa-solid fa-om"></i>
+      <span>Pooja</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<!-- ================= SERVICES ================= -->
+<section class="services container fade">
+  <h2 class="section-title">Our Services</h2>
+
+  <div class="cards-grid">
+
+    <!-- PERSONAL REPORT -->
+    <a href="/astrotalk-clone/services/personal-report.html" class="service-link">
+      <article class="card gold-border">
+        <i class="fa-solid fa-file-lines"></i>
+        <h3>Personal Report</h3>
+        <p>Customized astrology report.</p>
+      </article>
+    </a>
+
+    <!-- LIVE SESSION -->
+    <a href="/astrotalk-clone/services/live-session.html" class="service-link">
+      <article class="card pink-border">
+        <i class="fa-solid fa-video"></i>
+        <h3>Live Session</h3>
+        <p>1-on-1 expert consultation.</p>
+      </article>
+    </a>
+
+    <!-- MONTHLY FORECAST -->
+    <a href="/astrotalk-clone/services/monthly-forecast.html" class="service-link">
+      <article class="card gold-border">
+        <i class="fa-solid fa-calendar-days"></i>
+        <h3>Monthly Forecast</h3>
+        <p>Upcoming planetary guidance.</p>
+      </article>
+    </a>
+
+  </div>
+</section>
+
+<!-- ================= ASTROLOGERS ================= -->
+<section class="our-astrologers fade">
+  <div class="container">
+    <h2>Our Astrologers</h2>
+    <p>Trusted & Verified Experts</p>
+
+    <div class="swiper astroSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide astro-card">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg">
+          <h3>Animesh Lala</h3>
+          <span>Vedic Astrology</span>
+        </div>
+        <div class="swiper-slide astro-card">
+          <img src="https://randomuser.me/api/portraits/women/44.jpg">
+          <h3>Aakancha Lala</h3>
+          <span>Numerology</span>
+        </div>
+        <div class="swiper-slide astro-card">
+          <img src="https://randomuser.me/api/portraits/men/65.jpg">
+          <h3>Abhay</h3>
+          <span>Vastu</span>
+        </div>
+        <div class="swiper-slide astro-card">
+          <img src="https://randomuser.me/api/portraits/women/68.jpg">
+          <h3>Shalini</h3>
+          <span>Tarot</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOG SECTION ================= -->
+<section class="blog-section fade">
+  <div class="container">
+
+    <h2 class="section-title">Latest From Blog</h2>
+
+    <!-- Swiper -->
+    <div class="swiper blogSwiper">
+      <div class="swiper-wrapper">
+
+        <!-- CARD 1 -->
+        <div class="swiper-slide">
+          <div class="blog-card">
+            <div class="blog-img">
+              <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="">
+            </div>
+            <h3>How Astrology Is Using AI</h3>
+            <p>Astrologer Anshika · Nov 14, 2025</p>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="swiper-slide">
+          <div class="blog-card">
+            <div class="blog-img">
+              <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9" alt="">
+            </div>
+            <h3>Mars in Scorpio Effects</h3>
+            <p>Astrologer Anshika · Nov 06, 2025</p>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="swiper-slide">
+          <div class="blog-card">
+            <div class="blog-img">
+              <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa" alt="">
+            </div>
+            <h3>Jupiter & Marriage Trends</h3>
+            <p>Astrologer Anshika · Oct 29, 2025</p>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="swiper-slide">
+          <div class="blog-card">
+            <div class="blog-img">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee" alt="">
+            </div>
+            <h3>Saturn Transit & Career</h3>
+            <p>Astrologer Rahul · Oct 18, 2025</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+</main>
+
+<!-- ================= FOOTER (IMPROVED) ================= -->
+<footer class="site-footer fade">
+  <div class="container footer-grid">
+
+    <div class="footer-col">
+      <h4>ABOUT</h4>
+      <ul>
+        <li><a href="about/aboutus.html">About Us</a></li>
+        <li><a href="about/careers.html">Careers</a></li>
+        <li><a href="about/astrology.html">Astrology Stories</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>HELP</h4>
+      <ul>
+        <li><a href="/astrotalk-clone/payment/payment2.html">Payments</a></li>
+        <li><a href="payment/refund.html">Refund Policy</a></li>
+        <li><a href="payment/faq.html">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>CONTACT</h4>
+      <p class="footer-contact">
+        <i class="fa-solid fa-envelope"></i>
+        <span>contact@eshankatalk.com</span>
+      </p>
+
+      <div class="footer-social">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 <strong>EshankaTalk.com</strong> · All Rights Reserved
+  </div>
+</footer>
+
+
+<!-- ================= LOGIN POPUP ================= -->
+
+<div id="login-modal">
+
+  <div class="login-box">
+
+    <div class="login-header">
+      <h3>Continue with Phone</h3>
+
+      <button id="close-login">
+        ✖
+      </button>
+    </div>
+
+    <p>
+      You will receive a 4 digit code for verification
+    </p>
+
+    <div class="phone-input">
+
+      <select>
+        <option>+91 India</option>
+      </select>
+
+      <input type="tel" placeholder="Enter mobile no.">
+
+    </div>
+
+    <button class="otp-btn">
+      GET OTP
+    </button>
+
+    <div class="or">
+      OR
+    </div>
+
+    <button class="google-btn">
+      Sign in with Google
+    </button>
+
+    <p class="terms">
+      By Signing up, you agree to our
+      <a href="#">Terms</a> &
+      <a href="#">Privacy Policy</a>
+    </p>
+
+  </div>
+
+</div>
+
+<!-- ================= TALK NOW POPUP ================= -->
+
+<div id="talk-modal">
+
+  <div class="talk-box">
+
+    <div class="talk-header">
+      <h3>Talk With Astrologer</h3>
+
+      <button id="close-talk">✖</button>
+    </div>
+
+    <p>Select how you want to connect</p>
+
+    <div class="talk-options">
+
+    <button class="talk-btn chat-btn" id="talk-chat">
+      <i class="fa-solid fa-comment"></i> Chat Now
+    </button>
+
+    <a href="https://wa.me/916390129813?text=Hi%20I%20want%20astrology%20consultation"
+      target="_blank"
+      class="talk-btn call-btn">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp Now
+    </a>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- ================= CHATBOT ================= -->
+<div id="chatbot-widget">
+  <button id="chatbot-toggle">
+    <i class="fa-solid fa-robot"></i>
+  </button>
+
+  <div id="chatbot-modal">
+    <div class="chatbot-header">
+      <strong>Eshanka Assistant</strong>
+      <button id="chatbot-close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div id="chatbot-messages"></div>
+
+    <div class="chatbot-input">
+      <input id="chatbot-input-field" placeholder="Type your message...">
+      <button id="chatbot-send">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="scripts/common.js"></script>
+<script src="scripts/chatbot.js"></script>
+<script src="scripts/love-calculator.js"></script>
+<script src="scripts/numerology.js"></script>
+</body>
+</html>

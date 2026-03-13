@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Eshanka Payment</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Poppins;
+background:#f4f6fb;
+}
+
+.payment-layout{
+display:flex;
+min-height:100vh;
+}
+
+/* LEFT */
+
+.brand{
+width:40%;
+background:#111;
+color:#fff;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:40px;
+}
+
+.brand img{
+width:90px;
+margin-bottom:20px;
+}
+
+/* RIGHT */
+
+.payment-side{
+width:60%;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.payment-card{
+background:#fff;
+width:420px;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.payment-title{
+font-size:22px;
+}
+
+.amount{
+font-size:32px;
+color:#2ecc71;
+margin:10px 0 20px;
+}
+
+/* METHOD */
+
+.method{
+border:1px solid #ddd;
+padding:12px;
+border-radius:8px;
+margin-bottom:10px;
+display:flex;
+align-items:center;
+gap:10px;
+cursor:pointer;
+}
+
+/* METHOD CONTENT */
+
+.method-content{
+display:none;
+margin-bottom:10px;
+}
+
+.method-content.active{
+display:block;
+}
+
+/* INPUT */
+
+.input{
+width:100%;
+padding:10px;
+border:1px solid #ddd;
+border-radius:6px;
+margin-bottom:10px;
+}
+
+.row{
+display:flex;
+gap:10px;
+}
+
+/* BUTTON */
+
+.pay-btn{
+background:#ffd400;
+border:none;
+width:100%;
+padding:14px;
+border-radius:8px;
+font-weight:600;
+cursor:pointer;
+margin-top:10px;
+}
+
+/* MODAL */
+
+.modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.5);
+display:flex;
+align-items:center;
+justify-content:center;
+visibility:hidden;
+opacity:0;
+transition:.3s;
+}
+
+.modal.active{
+visibility:visible;
+opacity:1;
+}
+
+.modal-box{
+background:#fff;
+padding:25px;
+width:350px;
+border-radius:10px;
+}
+
+/* INVOICE MODAL */
+
+.invoice-modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+display:flex;
+align-items:center;
+justify-content:center;
+visibility:hidden;
+opacity:0;
+transition:.3s;
+}
+
+.invoice-modal.active{
+visibility:visible;
+opacity:1;
+}
+
+.invoice-box{
+background:#fff;
+padding:25px;
+width:380px;
+border-radius:10px;
+}
+
+.row-line{
+display:flex;
+justify-content:space-between;
+margin-bottom:6px;
+font-size:14px;
+}
+
+.actions{
+margin-top:10px;
+display:flex;
+gap:10px;
+}
+
+.download{
+background:#2ecc71;
+border:none;
+color:#fff;
+padding:8px 14px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.whatsapp{
+background:#25D366;
+border:none;
+color:#fff;
+padding:8px 14px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.qr{
+width:120px;
+margin-top:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="payment-layout">
+
+<!-- BRAND -->
+
+<div class="brand">
+
+<img src="/astrotalk-clone/assets/logo.png">
+
+<h2>Eshanka Talk</h2>
+
+<p>Secure astrology consultation payments.</p>
+
+</div>
+
+<!-- PAYMENT -->
+
+<div class="payment-side">
+
+<div class="payment-card">
+
+<div class="payment-title">Complete Payment</div>
+
+<div class="amount">₹ <span id="amount">0</span></div>
+
+<!-- UPI -->
+
+<label class="method">
+<input type="radio" name="method" onclick="showMethod('upi')">
+UPI Payment
+</label>
+
+<div id="upi" class="method-content">
+
+<input class="input" placeholder="Enter UPI ID">
+
+<div>Scan QR</div>
+
+<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=upi://pay">
+
+</div>
+
+<!-- CARD -->
+
+<label class="method">
+<input type="radio" name="method" onclick="showMethod('card')">
+Debit / Credit Card
+</label>
+
+<div id="card" class="method-content">
+
+<input class="input" placeholder="Card Number">
+
+<div class="row">
+
+<input class="input" placeholder="MM/YY">
+
+<input class="input" placeholder="CVV">
+
+</div>
+
+</div>
+
+<!-- RUPAY -->
+
+<label class="method">
+<input type="radio" name="method" onclick="showMethod('rupay')">
+RuPay Card
+</label>
+
+<div id="rupay" class="method-content">
+
+<input class="input" placeholder="RuPay Card Number">
+
+<div class="row">
+
+<input class="input" placeholder="MM/YY">
+
+<input class="input" placeholder="CVV">
+
+</div>
+
+</div>
+
+<button class="pay-btn" onclick="openModal()">
+Pay Now
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CUSTOMER MODAL -->
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<h3>Customer Details</h3>
+
+<input class="input" id="custName" placeholder="Customer Name">
+
+<input class="input" id="custMobile" placeholder="Mobile Number">
+
+<input class="input" id="custAddress" placeholder="Address">
+
+<button class="pay-btn" onclick="completePayment()">
+Confirm Payment
+</button>
+
+</div>
+
+</div>
+
+<!-- INVOICE POPUP -->
+
+<div class="invoice-modal" id="invoiceModal">
+
+<div class="invoice-box">
+
+<h3>Invoice</h3>
+
+<div class="row-line">
+<span>Invoice No</span>
+<span id="invId"></span>
+</div>
+
+<div class="row-line">
+<span>Name</span>
+<span id="invName"></span>
+</div>
+
+<div class="row-line">
+<span>Mobile</span>
+<span id="invMobile"></span>
+</div>
+
+<div class="row-line">
+<span>Address</span>
+<span id="invAddress"></span>
+</div>
+
+<div class="row-line">
+<span>Amount</span>
+<span>₹ <span id="invAmount"></span></span>
+</div>
+
+<div class="row-line">
+<span>Status</span>
+<span>Done</span>
+</div>
+
+<div class="row-line">
+<span>Date</span>
+<span id="invDate"></span>
+</div>
+
+<div class="actions">
+
+<button class="download" onclick="downloadPDF()">
+Download PDF
+</button>
+
+<button class="whatsapp" onclick="sendWhatsApp()">
+Send WhatsApp
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* AMOUNT */
+
+const params=new URLSearchParams(window.location.search)
+const amount=params.get("amount")
+document.getElementById("amount").innerText=amount
+
+
+/* METHOD SWITCH */
+
+function showMethod(method){
+
+document.querySelectorAll(".method-content").forEach(el=>{
+el.classList.remove("active")
+})
+
+document.getElementById(method).classList.add("active")
+
+}
+
+
+/* OPEN CUSTOMER MODAL */
+
+function openModal(){
+
+document.getElementById("modal").classList.add("active")
+
+}
+
+
+/* PAYMENT COMPLETE */
+
+function completePayment(){
+
+const name=document.getElementById("custName").value
+const mobile=document.getElementById("custMobile").value
+const address=document.getElementById("custAddress").value
+
+document.getElementById("modal").classList.remove("active")
+
+document.getElementById("invoiceModal").classList.add("active")
+
+document.getElementById("invName").innerText=name
+document.getElementById("invMobile").innerText=mobile
+document.getElementById("invAddress").innerText=address
+document.getElementById("invAmount").innerText=amount
+document.getElementById("invDate").innerText=new Date().toLocaleDateString()
+
+document.getElementById("invId").innerText="INV-"+Math.floor(Math.random()*90000)
+
+}
+
+
+/* PDF */
+
+function downloadPDF(){
+
+const {jsPDF}=window.jspdf
+const doc=new jsPDF()
+
+doc.text("Eshanka Talk Payment Invoice",20,20)
+doc.text("Invoice No: "+document.getElementById("invId").innerText,20,40)
+doc.text("Name: "+document.getElementById("invName").innerText,20,50)
+doc.text("Mobile: "+document.getElementById("invMobile").innerText,20,60)
+doc.text("Address: "+document.getElementById("invAddress").innerText,20,70)
+doc.text("Amount: ₹"+document.getElementById("invAmount").innerText,20,80)
+doc.text("Status: Done",20,90)
+doc.text("Date: "+document.getElementById("invDate").innerText,20,100)
+
+doc.save("eshanka-invoice.pdf")
+
+}
+
+
+/* WHATSAPP */
+
+function sendWhatsApp(){
+
+const name=document.getElementById("invName").innerText
+const amount=document.getElementById("invAmount").innerText
+
+const text=`Invoice from Eshanka Talk
+
+Customer: ${name}
+Amount: ₹${amount}
+
+Status: Paid`
+
+window.open(`https://wa.me/?text=${encodeURIComponent(text)}`)
+
+}
+
+</script>
+
+</body>
+</html>

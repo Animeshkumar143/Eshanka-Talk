@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Birth Chart | Eshanka Talk</title>
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="container header-inner">
+
+    <a class="logo" href="../index.html">
+      <img src="../assets/logo.png">
+      <span>Eshanka Talk</span>
+    </a>
+
+    <nav class="nav">
+      <a href="../Kundli.html"><i class="fa-solid fa-star"></i>Free Kundli</a>
+      <a href="../Matching.html"><i class="fa-solid fa-heart"></i>Matching</a>
+      <a href="../Calculator.html"><i class="fa-solid fa-calculator"></i><strong>Calculators</strong></a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="btn ghost"><i class="fa-solid fa-user"></i> Login</button>
+      <button class="btn cta"><i class="fa-solid fa-comments"></i> Talk Now</button>
+    </div>
+
+  </div>
+</header>
+
+
+<!-- ================= HERO ================= -->
+<section class="kundli-hero">
+  <div class="container">
+    <h1>Birth Chart / Natal Chart</h1>
+    <p>Find your Rashi using birth details</p>
+  </div>
+</section>
+
+
+<!-- ================= FORM ================= -->
+<section class="kundli-section">
+  <div class="container kundli-grid">
+
+    <div class="num-card">
+
+      <div class="num-card-header">
+        <i class="fa-solid fa-moon"></i>
+        <span>Enter Your Birth Details</span>
+      </div>
+
+
+      <form id="moonForm" class="num-card-body">
+
+        <label>Name *</label>
+        <input type="text" id="moonName" required>
+
+        <label>Date of Birth *</label>
+
+        <div class="num-date-grid">
+
+          <select id="moonDay" required>
+            <option value="">Day</option>
+            <script>
+              for(let i=1;i<=31;i++)document.write(`<option>${i}</option>`);
+            </script>
+          </select>
+
+          <select id="moonMonth" required>
+            <option value="">Month</option>
+            <option>January</option><option>February</option><option>March</option>
+            <option>April</option><option>May</option><option>June</option>
+            <option>July</option><option>August</option><option>September</option>
+            <option>October</option><option>November</option><option>December</option>
+          </select>
+
+          <select id="moonYear" required>
+            <option value="">Year</option>
+            <script>
+              for(let y=1950;y<=2026;y++)document.write(`<option>${y}</option>`);
+            </script>
+          </select>
+
+        </div>
+
+
+        <label>Time of Birth</label>
+
+        <div class="num-date-grid">
+
+          <select id="moonHour">
+            <option value="">Hour</option>
+            <script>
+              for(let i=0;i<24;i++)document.write(`<option>${i}</option>`);
+            </script>
+          </select>
+
+          <select id="moonMin">
+            <option value="">Minute</option>
+            <script>
+              for(let i=0;i<60;i++)document.write(`<option>${i}</option>`);
+            </script>
+          </select>
+
+          <select id="moonSec">
+            <option value="">Second</option>
+            <script>
+              for(let i=0;i<60;i++)document.write(`<option>${i}</option>`);
+            </script>
+          </select>
+
+        </div>
+
+
+        <label>Place of Birth *</label>
+        <input type="text" id="moonPlace" required>
+
+
+        <div class="num-actions">
+
+          <button class="num-submit" type="submit">
+            CALCULATE
+          </button>
+
+          <button class="num-reset" type="reset">
+            RESET
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+
+    <div class="kundli-box saved">
+
+      <h3>What is Birth and Natal</h3>
+
+      <p>
+        Birth and Natal signs represent your personality, physical appearance and how others perceive you
+        according to Vedic astrology.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- ================= BIRTH CHART RESULT POPUP ================= -->
+<div class="birth-popup" id="birthPopup">
+
+  <div class="birth-box" id="birthPDF">
+
+    <span class="birth-close" id="birthClose">&times;</span>
+
+
+    <!-- TITLE -->
+    <h2 class="birth-title" id="birthTitle"></h2>
+
+
+    <!-- CHARTS -->
+    <div class="birth-chart-grid">
+
+      <div class="birth-chart">
+        <h4>Lagna / Ascendant</h4>
+        <img id="lagnaChart">
+      </div>
+
+      <div class="birth-chart">
+        <h4>Navamsa</h4>
+        <img id="navamsaChart">
+      </div>
+
+    </div>
+
+
+    <!-- PLANET TABLE -->
+    <div class="birth-card">
+
+      <h3>Planets</h3>
+
+      <table class="birth-table" id="planetTable">
+
+        <thead>
+          <tr>
+            <th>Planet</th>
+            <th>Sign</th>
+            <th>Degree</th>
+            <th>House</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody></tbody>
+
+      </table>
+
+    </div>
+
+
+    <!-- DASHA -->
+    <div class="birth-card">
+
+      <h3>Vimshottari Dasha</h3>
+
+      <table class="birth-table" id="dashaTable">
+
+        <thead>
+          <tr>
+            <th>Planet</th>
+            <th>Start</th>
+            <th>End</th>
+          </tr>
+        </thead>
+
+        <tbody></tbody>
+
+      </table>
+
+    </div>
+
+
+    <!-- ACTION -->
+    <div class="birth-actions">
+
+      <button id="birthShare">📤 Share Your Report</button>
+
+      <button id="birthAgain">Calculate Again</button>
+
+    </div>
+
+
+    <p class="birth-desc">
+      By mapping planets at birth, it reveals insights into personality,
+      emotions, strengths and life purpose.
+    </p>
+
+  </div>
+
+</div>
+
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+
+  <div class="container footer-grid">
+
+    <div class="footer-col">
+      <h4>ABOUT</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Astrology Stories</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>HELP</h4>
+      <ul>
+        <li><a href="#">Payments</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>CONTACT</h4>
+      <p><i class="fa-solid fa-envelope"></i> contact@eshankatalk.com</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 <strong>EshankaTalk.com</strong>
+  </div>
+
+</footer>
+
+
+<!-- PDF LIBRARY -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script src="../scripts/common.js"></script>
+<script src="../scripts/chatbot.js"></script>
+<script src="../scripts/Birth-Chart.js"></script>
+
+</body>
+</html>

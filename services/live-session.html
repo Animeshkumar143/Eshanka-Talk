@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Live Astrology Session | Eshanka Talk</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+box-sizing:border-box;
+font-family:Poppins;
+}
+
+body{
+margin:0;
+background:linear-gradient(135deg,#f8f9ff,#eef1ff);
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:60px 20px;
+}
+
+.hero h1{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#666;
+max-width:600px;
+margin:auto;
+}
+
+/* FORM CARD */
+
+.form-wrapper{
+max-width:720px;
+margin:40px auto;
+background:#fff;
+padding:40px;
+border-radius:16px;
+box-shadow:0 20px 60px rgba(0,0,0,0.1);
+}
+
+/* GRID */
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:16px;
+}
+
+/* INPUT */
+
+.input-group{
+margin-bottom:16px;
+}
+
+.input-group label{
+font-size:14px;
+display:block;
+margin-bottom:6px;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ddd;
+outline:none;
+transition:.2s;
+
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus{
+
+border-color:#ffd400;
+box-shadow:0 0 0 3px rgba(255,212,0,.2);
+
+}
+
+/* BUTTON */
+
+.submit-btn{
+
+width:100%;
+padding:14px;
+border:none;
+background:#ffd400;
+border-radius:8px;
+font-weight:600;
+cursor:pointer;
+margin-top:10px;
+
+}
+
+/* SUCCESS */
+
+.success{
+display:none;
+text-align:center;
+padding:20px;
+margin-top:20px;
+background:#f6fff7;
+border-radius:10px;
+}
+
+.meet-link{
+display:block;
+margin-top:10px;
+color:#2ecc71;
+font-weight:600;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<h1>1-on-1 Astrology Live Session</h1>
+
+<p>
+Book a private live consultation with our astrology expert.
+Choose your preferred date and time to receive your Google Meet link.
+</p>
+
+</section>
+
+<div class="form-wrapper">
+
+<form id="sessionForm">
+
+<div class="grid">
+
+<div class="input-group">
+<label>Full Name</label>
+<input type="text" required>
+</div>
+
+<div class="input-group">
+<label>Mobile Number</label>
+<input type="tel" required>
+</div>
+
+<div class="input-group">
+<label>Email</label>
+<input type="email" required>
+</div>
+
+<div class="input-group">
+<label>Gender</label>
+<select>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+</div>
+
+</div>
+
+<div class="grid">
+
+<div class="input-group">
+<label>Date of Birth</label>
+<input type="date">
+</div>
+
+<div class="input-group">
+<label>Time of Birth</label>
+<input type="time">
+</div>
+
+</div>
+
+<div class="grid">
+
+<div class="input-group">
+<label>Preferred Session Date</label>
+<input type="date" required>
+</div>
+
+<div class="input-group">
+<label>Preferred Session Time</label>
+<input type="time" required>
+</div>
+
+</div>
+
+<div class="input-group">
+
+<label>Describe your question</label>
+
+<textarea rows="4" placeholder="Write your question here..."></textarea>
+
+</div>
+
+<button class="submit-btn">
+Book Live Session
+</button>
+
+</form>
+
+<div class="success" id="successBox">
+
+<h3>Session Booked Successfully 🎉</h3>
+
+<p>Your astrology consultation is scheduled.</p>
+
+<p>Join your live session here:</p>
+
+<a id="meetLink" class="meet-link" target="_blank">
+Join Google Meet
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+const form=document.getElementById("sessionForm")
+const success=document.getElementById("successBox")
+const meet=document.getElementById("meetLink")
+
+form.addEventListener("submit",function(e){
+
+e.preventDefault()
+
+/* random meet link */
+
+const meetCode=Math.random().toString(36).substring(2,10)
+
+const meetURL="https://meet.google.com/"+meetCode
+
+meet.href=meetURL
+
+form.style.display="none"
+
+success.style.display="block"
+
+})
+
+</script>
+
+</body>
+
+</html>

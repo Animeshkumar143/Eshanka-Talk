@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Lucky Vehicle Number Calculator | Eshanka Talk</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- MAIN CSS -->
+<link rel="stylesheet" href="../styles.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="site-header">
+
+  <div class="container header-inner">
+
+    <a class="logo" href="../index.html">
+      <img src="../assets/logo.png">
+      <span>Eshanka Talk</span>
+    </a>
+
+    <nav class="nav">
+
+      <a href="../Kundli.html">
+        <i class="fa-solid fa-star"></i> Free Kundli
+      </a>
+
+      <a href="../Matching.html">
+        <i class="fa-solid fa-heart"></i> Matching
+      </a>
+
+      <a href="../Calculator.html">
+        <i class="fa-solid fa-calculator"></i>
+        <strong>Calculators</strong>
+      </a>
+
+    </nav>
+
+    <div class="header-actions">
+
+      <button class="btn ghost">
+        <i class="fa-solid fa-user"></i> Login
+      </button>
+
+      <button class="btn cta">
+        <i class="fa-solid fa-comments"></i> Talk Now
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="kundli-hero">
+
+  <div class="container">
+
+    <h1>Lucky Vehicle Number Calculator</h1>
+
+    <p>
+      Find the perfect vehicle number based on numerology
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- ================= LUCKY VEHICLE ================= -->
+
+<section class="lucky-section">
+
+  <div class="container">
+
+    <h2>Calculate Your Lucky Vehicle Number</h2>
+
+    <p class="lucky-desc">
+      Discover the energy of your vehicle number
+    </p>
+
+
+    <!-- FORM -->
+
+    <div class="lucky-box" id="luckyForm">
+
+      <h3>● Calculate your Lucky Vehicle Number 🌙</h3>
+
+
+      <div class="lucky-form">
+
+
+        <label>Date of Birth *</label>
+
+        <div class="lucky-date">
+
+          <select id="lvDay">
+            <option value="">Day</option>
+          </select>
+
+          <select id="lvMonth">
+            <option value="">Month</option>
+          </select>
+
+          <select id="lvYear">
+            <option value="">Year</option>
+          </select>
+
+        </div>
+
+
+        <label>Vehicle Number *</label>
+
+        <input
+          type="text"
+          id="vehicleNum"
+          placeholder="MH12AB1234"
+        >
+
+
+        <button id="luckyBtn">
+          ✦ Calculate my lucky number ✦
+        </button>
+
+
+      </div>
+
+    </div>
+
+
+
+    <!-- RESULT -->
+
+    <div class="lucky-result" id="luckyResult">
+
+
+      <h2>
+        Vehicle Number Analysis :
+        <span id="resultVehicle"></span>
+      </h2>
+
+      <p>Discover your number's energy</p>
+
+
+      <div
+        class="lucky-status"
+        id="resultStatus"
+      ></div>
+
+
+      <div
+        class="lucky-note"
+        id="resultNote"
+      ></div>
+
+
+      <div class="lucky-actions">
+
+        <button id="luckyShare">
+          📤 Share it
+        </button>
+
+        <button id="luckyAgain">
+          Calculate Again
+        </button>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="site-footer">
+
+  <div class="container footer-grid">
+
+    <div class="footer-col">
+
+      <h4>ABOUT</h4>
+
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Astrology Stories</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-col">
+
+      <h4>HELP</h4>
+
+      <ul>
+        <li><a href="#">Payments</a></li>
+        <li><a href="#">Refund Policy</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+
+    </div>
+
+
+    <div class="footer-col">
+
+      <h4>CONTACT</h4>
+
+      <p>
+        <i class="fa-solid fa-envelope"></i>
+        contact@eshankatalk.com
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    © 2026 <strong>EshankaTalk.com</strong>
+
+  </div>
+
+</footer>
+
+
+
+<!-- ================= SCRIPTS ================= -->
+
+<script src="../scripts/common.js"></script>
+<script src="../scripts/chatbot.js"></script>
+<script src="../scripts/lucky-vehicle.js"></script>
+
+</body>
+</html>

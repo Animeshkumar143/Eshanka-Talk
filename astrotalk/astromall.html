@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Astromall | Eshanka Talk</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="../styles.css">
+
+<style>
+
+body{
+font-family:Poppins;
+background:#f6f6f6;
+margin:0;
+}
+
+/* HERO */
+
+.mall-hero{
+text-align:center;
+padding:40px 0 20px;
+}
+
+.mall-hero h2{
+font-size:28px;
+margin-bottom:6px;
+}
+
+.mall-hero p{
+color:#777;
+}
+
+/* SEARCH */
+
+.search-box{
+display:flex;
+justify-content:center;
+margin-top:15px;
+}
+
+.search-box input{
+width:350px;
+padding:12px;
+border-radius:6px 0 0 6px;
+border:1px solid #ddd;
+}
+
+.search-box button{
+background:#ffd400;
+border:none;
+padding:12px 18px;
+border-radius:0 6px 6px 0;
+cursor:pointer;
+}
+
+/* FILTER */
+
+.filters{
+text-align:center;
+margin:20px 0;
+}
+
+.filters button{
+padding:8px 14px;
+border-radius:20px;
+border:1px solid #ddd;
+background:#fff;
+margin:4px;
+cursor:pointer;
+}
+
+.filters button.active{
+background:#ffd400;
+}
+
+/* GRID */
+
+.mall-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+padding:30px 40px;
+}
+
+/* CARD */
+
+.mall-card{
+background:#fff;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 4px 12px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.mall-card:hover{
+transform:translateY(-6px);
+}
+
+.mall-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card-body{
+padding:14px;
+}
+
+.card-body h4{
+margin:0 0 6px;
+font-size:16px;
+}
+
+.price{
+color:#2ecc71;
+font-weight:600;
+margin-bottom:6px;
+}
+
+.rating{
+color:#f5b301;
+font-size:13px;
+}
+
+.card-actions{
+display:flex;
+justify-content:space-between;
+margin-top:10px;
+}
+
+.cart-btn{
+background:#fff;
+border:1px solid #ddd;
+padding:6px 10px;
+border-radius:6px;
+cursor:pointer;
+}
+
+.buy-btn{
+background:#ffd400;
+border:none;
+padding:6px 12px;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* CART COUNT */
+
+.cart-count{
+background:red;
+color:#fff;
+border-radius:50%;
+font-size:12px;
+padding:2px 6px;
+margin-left:5px;
+}
+
+/* FOOTER */
+
+.site-footer{
+background:#111;
+color:#fff;
+padding:40px 0;
+margin-top:40px;
+}
+
+.footer-grid{
+display:flex;
+justify-content:space-around;
+}
+
+.footer-col ul{
+list-style:none;
+padding:0;
+}
+
+.footer-col a{
+color:#ccc;
+text-decoration:none;
+font-size:14px;
+}
+
+.footer-bottom{
+text-align:center;
+margin-top:20px;
+opacity:.7;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="site-header">
+<div class="container header-inner">
+
+<a class="logo" href="../index.html">
+<img src="../assets/logo.png">
+<span>Eshanka Talk</span>
+</a>
+
+<nav class="nav">
+<a href="../Kundli.html">Free Kundli</a>
+<a href="../Matching.html">Kundli Matching</a>
+<a href="../Horoscope/Horoscope.html">Horoscopes</a>
+<a href="../Calculator.html">Calculators</a>
+</nav>
+
+<div class="header-actions">
+
+<button class="btn ghost">
+<i class="fa fa-shopping-cart"></i>
+Cart <span id="cartCount" class="cart-count">0</span>
+</button>
+
+<button class="btn cta">Talk Now</button>
+
+</div>
+
+</div>
+</header>
+
+<!-- HERO -->
+
+<section class="mall-hero">
+
+<h2>Astromall Shop</h2>
+
+<p>Shop Best Online Astrology Products And Services</p>
+
+<div class="search-box">
+<input type="text" placeholder="Search products...">
+<button><i class="fa fa-search"></i></button>
+</div>
+
+</section>
+
+<!-- FILTERS -->
+
+<div class="filters">
+
+<button class="active" onclick="filterProducts('all')">All</button>
+<button onclick="filterProducts('pooja')">Pooja</button>
+<button onclick="filterProducts('spell')">Spell</button>
+<button onclick="filterProducts('healing')">Healing</button>
+
+</div>
+
+<!-- PRODUCTS -->
+
+<section class="mall-grid" id="productGrid"></section>
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+<div class="footer-grid">
+
+<div class="footer-col">
+<h4>ABOUT</h4>
+<ul>
+<li><a href="#">About Us</a></li>
+<li><a href="#">Careers</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h4>HELP</h4>
+<ul>
+<li><a href="#">Payments</a></li>
+<li><a href="#">Refund Policy</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h4>CONTACT</h4>
+<p>contact@eshankatalk.com</p>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Eshanka Talk
+</div>
+
+</footer>
+
+<script>
+
+let cart=0
+
+const products=[
+
+{name:"VIP Online Pooja",price:1100,cat:"pooja",img:"https://images.unsplash.com/photo-1603273578653-2d7c5c75a6b2"},
+{name:"Marriage Pooja",price:1500,cat:"pooja",img:"https://images.unsplash.com/photo-1604881991720-f91add269bed"},
+{name:"Career Growth Pooja",price:1200,cat:"pooja",img:"https://images.unsplash.com/photo-1594737625785-c1c2d9e24b33"},
+
+{name:"Love Attraction Spell",price:900,cat:"spell",img:"https://images.unsplash.com/photo-1600489000022-c2086d79f9d4"},
+{name:"Money Spell",price:950,cat:"spell",img:"https://images.unsplash.com/photo-1596495578065-3f3c3b4c0a5f"},
+{name:"Protection Spell",price:850,cat:"spell",img:"https://images.unsplash.com/photo-1524492412937-b28074a5d7da"},
+
+{name:"Evil Eye Removal",price:499,cat:"healing",img:"https://images.unsplash.com/photo-1578926288207-a90a5366759d"},
+{name:"Relationship Healing",price:700,cat:"healing",img:"https://images.unsplash.com/photo-1520813792240-56fc4a3765a7"},
+{name:"Energy Cleansing",price:650,cat:"healing",img:"https://images.unsplash.com/photo-1519681393784-d120267933ba"},
+{name:"Aura Healing",price:750,cat:"healing",img:"https://images.unsplash.com/photo-1506126613408-eca07ce68773"}
+
+]
+
+function renderProducts(list){
+
+const grid=document.getElementById("productGrid")
+
+grid.innerHTML=""
+
+list.forEach(p=>{
+
+grid.innerHTML+=`
+
+<div class="mall-card">
+
+<img src="${p.img}">
+
+<div class="card-body">
+
+<h4>${p.name}</h4>
+
+<div class="price">₹ ${p.price}</div>
+
+<div class="rating">★★★★★</div>
+
+<div class="card-actions">
+
+<button class="cart-btn" onclick="addCart()">🛒</button>
+
+<button class="buy-btn" onclick="buyNow(${p.price})">Buy</button>
+
+</div>
+
+</div>
+
+</div>
+
+`
+
+})
+
+}
+
+renderProducts(products)
+
+function filterProducts(cat){
+
+document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"))
+
+event.target.classList.add("active")
+
+if(cat==="all"){
+renderProducts(products)
+}else{
+renderProducts(products.filter(p=>p.cat===cat))
+}
+
+}
+
+function addCart(){
+
+cart++
+
+document.getElementById("cartCount").innerText=cart
+
+}
+
+function buyNow(price){
+
+window.location.href="../payment/payment.html?amount="+price
+
+}
+
+</script>
+
+</body>
+</html>
